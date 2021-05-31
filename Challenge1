@@ -1,0 +1,16 @@
+fr_1 = int(input("Inserte el valor de vulnerabilidad: "))
+fr_2 = (fr_1*2)+4
+fr_3= int((fr_1 + fr_2)/5)
+def faseVacunacion(int: fr_3):
+  if(0<=fr_3<=20):
+    return "uno"
+  elif (21<=fr_3<=30):
+    return "dos"
+  elif (31<=fr_3<=50):
+    return "tres"
+  elif (fr_3>50):
+    return "cuatro"
+  else:
+    return "Ha habido un error. Por favor consultar con se programador mas cercano :)"  
+print(fr_1, fr_2, fr_3)
+print(faseVacunacion(fr_3))
