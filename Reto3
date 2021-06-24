@@ -1,0 +1,57 @@
+incoming_data = input("Insert please the string chain: ").split(" ")
+
+
+def comparing_list(lista):
+    compare_list = lista.copy()
+    compare_list.insert(0, 0)
+    compare_list.pop()
+    return compare_list
+
+
+def lista_letras_solas(lista):
+    lista_reducida = []
+    list_to_compare = comparing_list(incoming_data)
+    for i in range(0, len(lista)):
+        if lista[i] != list_to_compare[i]:
+            lista_reducida.append(lista[i])
+        else:
+            pass
+    return lista_reducida
+
+
+lista_reducida = lista_letras_solas(incoming_data)
+
+
+def letras_solas(lista):
+    letter_word = ""
+    list_to_compare = comparing_list(incoming_data)
+    for i in range(0, len(lista)):
+        if lista[i] != list_to_compare[i]:
+            letter_word += (lista[i] + " ")
+    return letter_word
+
+
+letras_reducida = lista_letras_solas(incoming_data)
+
+
+def number_output(lista, reduced_list):
+    counter = 0
+    number_word = ""
+    lista.append(str(0))
+    while (len(reduced_list) > 0):
+        if lista[0] != reduced_list[0]:
+            reduced_list.pop(0)
+            number_word += (str(counter) + " ")
+            counter = 0
+        elif lista[0] == reduced_list[0]:
+            counter += 1
+            lista.pop(0)
+        else:
+            print("Error")
+    return number_word
+
+
+letras = letras_solas(incoming_data)
+print(letras)
+numeros = number_output(incoming_data, lista_reducida)
+print(numeros)
